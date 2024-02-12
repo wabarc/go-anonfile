@@ -41,7 +41,7 @@ jobs:
       digest: ${{ steps.digest.outputs.result }}
     steps:
     - name: Download math result from build job
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v4
       with:
         name: ${{ env.PRODUCT }}
         path: .
@@ -60,7 +60,7 @@ jobs:
     needs: [build, checksum]
     steps:
     - name: Download math result from build and checksum jobs
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v4
       with:
         name: ${{ env.PRODUCT }}
         path: ${{ env.PRODUCT }}
